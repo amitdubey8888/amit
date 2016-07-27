@@ -1,0 +1,21 @@
+#include<stdio.h>
+#include<string.h>
+void check(char *a,char *b,int (*cmp)(const char *,const char *));
+int main()
+{
+	char s1[100],s2[100];
+	int (*p)(const char *,const char *);
+	printf("Enter both string:\n");
+	p=strcmp;
+	gets(s1);
+	gets(s2);
+	check(s1,s2,p);
+	return 0;
+}
+void check(char *a,char *b,int (*cmp)(const char *,const char *))
+{
+	printf("Testing for equality......\n");
+	if(!(*cmp)(a,b)) printf("Equal\n");
+	else printf("Not equal\n");
+}
+
